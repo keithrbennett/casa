@@ -86,7 +86,7 @@ class PgCasaSeeder
     )
 
     # Will fail silently if supervisor-volunteer record already exists.
-    SupervisorVolunteer.create(supervisor: pg_supervisor, volunteer: volunteer)
+    SupervisorVolunteer.first_or_create!(supervisor: pg_supervisor, volunteer: volunteer)
 
     # casa_admin user
     CasaAdmin.first_or_create!(
